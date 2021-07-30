@@ -1,0 +1,49 @@
+:root{
+	font-size: 30px;
+}
+*{
+	box-sizing: border-box;
+}
+html, 
+body{
+	margin: 0;
+	padding: 0;
+	display: block;
+	font-family: 'Helvetica Neue LT Std';
+	box-sizing: border-box;
+	overflow-x: hidden;
+	ul{
+		padding: 0;
+		li{
+			list-style: none;
+		}
+	}
+	ui-view{
+		padding-top: 2em;
+		display: block;
+		width: 100vw;
+		transition: all .33s;
+		overflow: hidden;
+		// background: red;
+	}
+	img{
+		display: block;
+	}
+	*.pageLoaded{
+		ui-view{
+			// background: green;
+		}
+	}
+	*.open{
+		ui-view{
+			background-attachment: fixed;
+			opacity: .25;
+			margin-left: 50vw;
+		}
+	}
+	&.pageLoaded{
+		ui-view{
+			// margin-top: 0em;
+		}
+	}
+}

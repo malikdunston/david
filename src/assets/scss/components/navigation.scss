@@ -1,0 +1,72 @@
+navigation{
+	display: block;
+	position: fixed;
+	width: 100vw;
+	z-index: 1000;
+	overflow: hidden;
+	height: 2em;
+	transition: 
+		height .5s;
+	.top{
+		transition: 
+			background-color .3s,
+			color 1s;
+		background: $light;
+		height: 2em;
+		overflow: hidden;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: .5em;
+		.logo{
+			margin: 0;
+			font-size: .5em;
+			line-height: 1em;
+		}
+		.hamburger{
+			font-size: .75em;
+			text-align: center;
+		}
+	}
+	.bottom{
+		padding: 0 .5em;
+		position: absolute;
+		display: block;
+		height: 100%;
+		width: 100%;
+		left: -50vw;
+		margin: 0;
+		transition: .33s left;
+		&.open{
+			left: 0;
+		}
+		ul{
+			position: relative;
+			bottom: 0;
+			margin: 0;
+			width: 50%;
+			li{
+				font-size: .45em;
+				letter-spacing: .1rem;
+				line-height: 2em;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+body.open{
+	ui-view{
+		pointer-events: none;
+	}
+	navigation{
+		height: 100vh;
+	}
+}
+
+body.pageIsLoaded{
+	navigation .top{
+		background: red!important;
+	}
+}
+
