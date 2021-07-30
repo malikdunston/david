@@ -10,11 +10,11 @@ const portData = OrigComp => {
 			return  await fetch(url).then(resp => resp.json());
 		}
 		sortProjs(projs){
-			let allProjs = projs;
+			// let allProjs = projs;
 			let arr = [];
 			projs.forEach(p=>{
 				if(p.parent === 0){
-					p.children = allProjs.filter(proj=>proj.parent === p.id);
+					p.children = projs.filter(proj=>proj.parent === p.id);
 					arr.push(p);
 				}
 			})

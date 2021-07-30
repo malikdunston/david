@@ -1,0 +1,2 @@
+# This allows you to redirect your entire website to any other domain
+Redirect 302 / https://davids-sublime-project-dd7116.webflow.io/
